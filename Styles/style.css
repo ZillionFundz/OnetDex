@@ -162,10 +162,11 @@ body {
 }
 
 .swap-interswitch img {
-    width: 25px;
+    height: 30px;
     border: 1px solid #000;
     border-radius: 50%;
     position: absolute;
+    background: #0166ff;
     transform: translate(-50%, -50%);
 }
 
