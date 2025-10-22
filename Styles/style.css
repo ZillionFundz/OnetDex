@@ -1,0 +1,185 @@
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    margin: auto;
+    /* max-width: 350px; */
+    min-width: 200px;
+    max-width: 50vw;
+    min-height: 100vh;
+    background: #dddfe2;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0166ff;
+    padding: 5px 15px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.header img {
+    width: 20px;
+    margin: 0px;
+}
+
+.wallet-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    background: #663399;
+    border: 0.5px solid #000;
+    border-radius: 5px;
+    gap: 4px;
+}
+
+.wallet-box span {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(10px, 0.5vw, 100px);
+}
+
+.scanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    background: #663399;
+    border: 0.5px solid #000;
+    border-radius: 5px;
+}
+
+.controls-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+.balance-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(10px, 0.5vw, 100px);
+    margin: 0px;
+}
+
+.balance-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0px 0px;
+    padding: 0px;
+}
+
+.balance-details img {
+    width: 15px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.amount-details {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(10px, 0.5vw, 100px);
+    margin: 0px;
+}
+
+.amount {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: clamp(25px, 0.8vw, 100px);
+    font-weight: bold;
+    margin: auto;
+    padding: 5px 2px 10px;
+}
+
+.exchange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 10vw;
+    /* background: red; */
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(12px, 0.5vw, 100px);
+    padding: 3px 5px;
+    background: #0166ff;
+    border: none;
+    border-radius: 5px;
+    min-width: 21vw;
+    max-width: 20vw;
+}
+
+.swap-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+    padding: 5px 0px;
+    background: #fff;
+    width: 100%;
+    gap: 2px;
+    position: relative;
+}
+
+.swap-interswitch img {
+    width: 7%;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.swap-box-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 5px;
+    width: 50vw;
+    height: 80px;
+    background: #dddfe2;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.swap-box-b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 5px;
+    width: 50vw;
+    height: 80px;
+    background: #dddfe2;
+    border-radius: 10px 0px 0px 10px;
+}
