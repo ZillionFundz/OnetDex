@@ -184,7 +184,7 @@ body {
     padding: 5px;
     width: 50vw;
     height: 100px;
-    gap: 5px;
+    gap: 10px;
     background: #dddfe2;
     border-radius: 0px 10px 10px 0px;
 }
@@ -198,15 +198,21 @@ body {
     padding: 5px;
     width: 50vw;
     height: 100px;
-    gap: 5px;
+    gap: 10px;
     background: #dddfe2;
     border-radius: 10px 0px 0px 10px;
 }
 
-.swap-amount {
-    font-size: clamp(18px, 0.4vw, 100px);
+.swap-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(12px, 0.4vw, 100px);
     font-weight: bold;
-    color: #545455;
+}
+
+.swap-amount {
+    font-size: clamp(20px, 0.4vw, 100px);
+    font-weight: bold;
+    color: #5d5d5e;
 }
 
 .transaction {
@@ -265,7 +271,20 @@ body {
         background: #0166ff;
         border: none;
         border-radius: 10px;
-        min-width: 24vw;
+        min-width: 40vw;
+        max-width: 20vw;
+    }
+
+    .trx-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(16px, 0.5vw, 100px);
+        padding: 6px 40px;
+        background: #0166ff;
+        border: none;
+        border-radius: 10px;
+        min-width: 25vw;
         max-width: 20vw;
     }
 }
