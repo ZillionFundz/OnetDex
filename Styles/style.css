@@ -141,11 +141,11 @@ body {
     justify-content: center;
     align-items: center;
     font-size: clamp(16px, 0.5vw, 100px);
-    padding: 5px 25px;
+    padding: 6px 40px;
     background: #0166ff;
     border: none;
-    border-radius: 5px;
-    min-width: 21vw;
+    border-radius: 10px;
+    min-width: 24vw;
     max-width: 20vw;
 }
 
@@ -207,5 +207,18 @@ body {
         min-height: 100vh;
         background: #dddfe2;
         overflow: hidden;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(16px, 0.5vw, 100px);
+        padding: 6px 45px;
+        background: #0166ff;
+        border: none;
+        border-radius: 10px;
+        min-width: 24vw;
+        max-width: 20vw;
     }
 }
