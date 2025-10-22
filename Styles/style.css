@@ -250,6 +250,39 @@ body {
     background: #6236e7;
 }
 
+.trend-area {
+    width: 100VW;
+    padding: 5PX 0px;
+    background: #3e3d3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.trnd-card {
+    width: 70%;
+    height: 50px;
+    background: #adadad;
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.coin {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #000;
+}
+
+
+
+/* MEDIA QUERY STARTA HERE: 👇 */
 
 @media screen and (max-width: 450px) {
     .container {
