@@ -84,7 +84,7 @@ body {
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(10px, 0.5vw, 100px);
-    margin: 0px;
+    margin: 10px 0px;
 }
 
 .balance-details {
@@ -110,10 +110,10 @@ body {
 
 .amount {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: clamp(25px, 0.8vw, 100px);
+    font-size: clamp(28px, 0.8vw, 100px);
     font-weight: bold;
     margin: auto;
-    padding: 5px 2px 10px;
+    padding: 2px 2px;
 }
 
 .exchange {
@@ -129,8 +129,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(12px, 0.5vw, 100px);
-    padding: 3px 5px;
+    font-size: clamp(14px, 0.5vw, 100px);
+    padding: 4px 5px;
     background: #0166ff;
     border: none;
     border-radius: 5px;
