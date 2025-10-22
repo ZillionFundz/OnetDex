@@ -118,7 +118,7 @@ body {
 }
 
 #pnl {
-    color: rgb(17, 185, 40);
+    color: #11b928;
 }
 
 .amount {
@@ -149,7 +149,7 @@ body {
     background: #0166ff;
     border: none;
     border-radius: 10px;
-    min-width: 24vw;
+    min-width: 25vw;
     max-width: 20vw;
 }
 
@@ -199,6 +199,41 @@ body {
     height: 100px;
     background: #dddfe2;
     border-radius: 10px 0px 0px 10px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 10vw;
+    background: red;
+    margin: 10px 0px 5px;
+}
+
+.trx-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(16px, 0.5vw, 100px);
+    padding: 6px 40px;
+    background: #0166ff;
+    border: none;
+    border-radius: 10px;
+    min-width: 18vw;
+    max-width: 20vw;
+}
+
+#buy {
+    background: #6236e7;
+}
+
+#swap {
+    background: #11b928;
+}
+
+#sell {
+    background: #6236e7;
 }
 
 
