@@ -15,7 +15,7 @@ body {
     margin: auto;
     /* max-width: 350px; */
     min-width: 200px;
-    max-width: 50vw;
+    max-width: 65vw;
     min-height: 100vh;
     background: #dddfe2;
     overflow: hidden;
@@ -182,4 +182,17 @@ body {
     height: 80px;
     background: #dddfe2;
     border-radius: 10px 0px 0px 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin: auto;
+        /* max-width: 350px; */
+        min-width: 200px;
+        max-width: 100vw;
+        min-height: 100vh;
+        background: #dddfe2;
+        overflow: hidden;
+    }
 }
