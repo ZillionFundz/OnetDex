@@ -110,7 +110,8 @@ body {
 
 .amount {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: clamp(28px, 0.8vw, 100px);
+    font-size: clamp(26px, 0.4vw, 100px);
+    /* font-size: 1.5rem; */
     font-weight: bold;
     margin: auto;
     padding: 2px 2px;
@@ -123,14 +124,15 @@ body {
     gap: 5px;
     width: 10vw;
     /* background: red; */
+    margin: 2px 0px 10px;
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(14px, 0.5vw, 100px);
-    padding: 4px 5px;
+    font-size: clamp(16px, 0.5vw, 100px);
+    padding: 5px 25px;
     background: #0166ff;
     border: none;
     border-radius: 5px;
@@ -151,7 +153,7 @@ body {
 }
 
 .swap-interswitch img {
-    width: 7%;
+    width: 25px;
     border: 1px solid #000;
     border-radius: 50%;
     position: absolute;
@@ -185,7 +187,7 @@ body {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
     .container {
         margin: auto;
         /* max-width: 350px; */
