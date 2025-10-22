@@ -149,7 +149,7 @@ body {
     background: #0166ff;
     border: none;
     border-radius: 10px;
-    min-width: 25vw;
+    min-width: 27vw;
     max-width: 20vw;
 }
 
@@ -206,8 +206,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    width: 10vw;
-    background: red;
+    width: 60vw;
+    /* background: red; */
     margin: 10px 0px 5px;
 }
 
@@ -229,7 +229,7 @@ body {
 }
 
 #swap {
-    background: #11b928;
+    background: #05c957;
 }
 
 #sell {
