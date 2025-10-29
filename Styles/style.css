@@ -449,9 +449,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #6236e7;
+    background: #0166ff;
     padding: 20px 15px;
-    border-top: 4px solid#0166ff;
+    border-top: 4px solid#6236e7;
     /* width: 100%; */
 }
 
