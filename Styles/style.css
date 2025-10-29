@@ -15,7 +15,7 @@ body {
     margin: auto;
     /* max-width: 350px; */
     min-width: 200px;
-    max-width: 65vw;
+    max-width: 55vw;
     min-height: 100vh;
     background: #dddfe2;
     overflow: hidden;
@@ -150,7 +150,7 @@ body {
     background: #0166ff;
     border: none;
     border-radius: 10px;
-    min-width: 27vw;
+    min-width: 23vw;
     max-width: 20vw;
 }
 
@@ -235,8 +235,8 @@ body {
     background: #0166ff;
     border: none;
     border-radius: 10px;
-    min-width: 18vw;
-    max-width: 18vw;
+    min-width: 15vw;
+    max-width: 15vw;
 }
 
 #buy {
@@ -358,11 +358,13 @@ body {
 
 .listed-control-area {
     margin: 0px;
-    padding: 10px 30px;
+    padding: 5px 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #454563;
+    /* background: #454563; */
+    background: #68688b;
 }
 
 .tabs {
@@ -371,19 +373,19 @@ body {
     align-items: center;
     gap: 4px;
     width: 100px;
-    height: 30px;
+    height: 25px;
     /* background: #3b3b50; */
 }
 
 .tabs button {
     width: 55px;
-    height: 30px;
+    height: 25px;
     border: none;
     background: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(14px, 0.5vw, 100px);
     font-weight: bold;
-    color: #dfdede;
+    color: #292929;
 }
 
 .tabs button:hover {
