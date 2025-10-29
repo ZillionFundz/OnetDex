@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONET-DEX</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
@@ -32,9 +33,9 @@
                 </div>
                 <div class="amount-group">
                     <div class="amount">$</div>
-                    <div class="amount">492,365.000</div>
+                    <div class="amount">494,852.000</div>
                 </div>
-                <label for="amount-details" id="pnl">+$127 (326% PNL)</label>
+                <label for="amount-details" id="pnl">+$243 (485% PNL)</label>
             </div>
             <div class="exchange">
                 <div class="send cta-buttons">
@@ -80,22 +81,166 @@
                 </div>
             </div>
         </div>
+        <h3 class="trend-title">Trending:</h3>
+
         <div class="trend-area">
-            <div class="trnd-card">
-                <div class="coin"></div>
-                <div class="coin-price"></div>
+            <div class="swiper trend-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/one.png" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$ONE</div>
+                            <div class="coin-price">$2M</div>
+                        </div>
+                    </div>
+                    <div class=" swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/rkc.jpg" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$RKC</div>
+                            <div class="coin-price">$0.0001172</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/ion.png" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$ION</div>
+                            <div class="coin-price">$0.002954</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/pi.jpg" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$pi</div>
+                            <div class="coin-price">$0.2754</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/snow.png" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$SNOW</div>
+                            <div class="coin-price">$0.0{9}4606</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide trend-card">
+                        <div class="coin-logo">
+                            <img src="Images/rkc.jpg" alt="">
+                        </div>
+                        <div class="price-box">
+                            <div class="coin-ticker">$CORE</div>
+                            <div class="coin-price">$0.234</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="trnd-card">
-                <div class="coin"></div>
-                <div class="coin-price"></div>
+        </div>
+        <div class="listed-control-area">
+            <div class="tabs">
+                <button id="active" class="">Crypto</button>
             </div>
-            <div class="trnd-card">
-                <div class="coin"></div>
-                <div class="coin-price"></div>
+            <div class="tabs">
+                <button>NFTs</button>
+            </div>
+            <div class="tabs">
+                <button>History</button>
+            </div>
+        </div>
+        <div class="listed-area">
+            <div class="listed-card">
+                <div class="coin-and-ticker">
+                    <div class="coin-logo">
+                        <img src="Images/one.png" alt="">
+                    </div>
+                    <div class="main-ticker">$ONE</div>
+                </div>
+                <div class="price-box">
+                    <div class="coin-ticker">$ONE</div>
+                    <div class="coin-price">$2M</div>
+                </div>
+            </div>
+            <div class="listed-card">
+                <div class="coin-and-ticker">
+                    <div class="coin-logo">
+                        <img src="Images/btc.png" alt="">
+                    </div>
+                    <div class="main-ticker">$BTC</div>
+                </div>
+                <div class="price-box">
+                    <div class="coin-ticker">$BTC</div>
+                    <div class="coin-price">$112,363</div>
+                </div>
+            </div>
+            <div class="listed-card">
+                <div class="coin-and-ticker">
+                    <div class="coin-logo">
+                        <img src="Images/eth.png" alt="">
+                    </div>
+                    <div class="main-ticker">$ETH</div>
+                </div>
+                <div class="price-box">
+                    <div class="coin-ticker">$ETH</div>
+                    <div class="coin-price">$3,990.10</div>
+                </div>
+            </div>
+            <div class="listed-card">
+                <div class="coin-and-ticker">
+                    <div class="coin-logo">
+                        <img src="Images/rkc.jpg" alt="">
+                    </div>
+                    <div class="main-ticker">$RKC</div>
+                </div>
+                <div class="price-box">
+                    <div class="coin-ticker">$RKC</div>
+                    <div class="coin-price">$0.0001172</div>
+                </div>
+            </div>
+            <div class="listed-card">
+                <div class="coin-and-ticker">
+                    <div class="coin-logo">
+                        <img src="Images/pi.jpg" alt="">
+                    </div>
+                    <div class="main-ticker">$PI</div>
+                </div>
+                <div class="price-box">
+                    <div class="coin-ticker">$Pi</div>
+                    <div class="coin-price">$0.2754</div>
+                </div>
+            </div>
+            <div class="more-listed">
+                <button>View More</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-icon active">
+                <img src="Images/home.png" alt="">
+                <span>Home</span>
+            </div>
+            <div class="footer-icon">
+                <img src="Images/market.png" alt="">
+                <span>Market</span>
+            </div>
+            <div class="footer-icon">
+                <img src="Images/portfolio.png" alt="">
+                <span>Portfolio</span>
+            </div>
+            <div class="footer-icon">
+                <img src="Images/discover.png" alt="">
+                <span>Discover</span>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <!-- SWIPER JS BELOW -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
