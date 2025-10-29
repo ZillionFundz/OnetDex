@@ -27,6 +27,7 @@ body {
     align-items: center;
     background: #0166ff;
     padding: 10px 15px;
+    border-bottom: 4px solid#6236e7;
 }
 
 .controls {
@@ -134,8 +135,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 10vw;
+    gap: 4px;
+    /* width: 10vw; */
     /* background: red; */
     margin: 10px 0px 5px;
 }
@@ -145,7 +146,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: clamp(16px, 0.5vw, 100px);
-    padding: 6px 40px;
+    padding: 10px 45px;
     background: #0166ff;
     border: none;
     border-radius: 10px;
@@ -219,8 +220,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 60vw;
+    gap: 4px;
+    /* width: 60vw; */
     /* background: red; */
     margin: 10px 0px 5px;
 }
@@ -230,12 +231,12 @@ body {
     justify-content: center;
     align-items: center;
     font-size: clamp(16px, 0.5vw, 100px);
-    padding: 6px 40px;
+    padding: 10px 45px;
     background: #0166ff;
     border: none;
     border-radius: 10px;
     min-width: 18vw;
-    max-width: 20vw;
+    max-width: 18vw;
 }
 
 #buy {
@@ -250,23 +251,39 @@ body {
     background: #6236e7;
 }
 
-.trend-area {
-    width: 100VW;
-    padding: 5PX 0px;
-    background: #3e3d3f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+.trend-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(16px, 0.5vw, 100px);
+    font-weight: bold;
+    padding: 0px 15px;
+    margin: 10px 0px 2px;
 }
 
-.trnd-card {
-    width: 70%;
-    height: 50px;
-    background: #adadad;
-    border-radius: 5px;
+.trend-area {
+    width: 100vw;
+    padding: 5px 0px 5px 10px;
+    background: #68688b;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.trend-card {
+    font-size: clamp(14px, 0.5vw, 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 150px;
+    /* max-width: 500px; */
+    height: 55px;
+    background: #454563;
+    /* background: #d34c4c; */
+    border-radius: 10px;
     margin: 0px;
-    padding: 0px 5px;
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,12 +291,169 @@ body {
 }
 
 .coin {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.coin-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 1px;
+    border-radius: 50%;
+    /* background: #000; */
+    border: 0.5px solid #000;
+}
+
+.coin-logo img {
+    margin: 0px;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #c9c4c4;
+}
+
+.price-box {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+}
+
+.coin-ticker {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(14px, 0.5vw, 100px);
+    font-weight: bold;
+    color: #dfdede;
+}
+
+.coin-price {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b8b8b8;
+}
+
+
+/* SWIPER STYLING HERE:👇 */
+.trend-swiper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.swiper-slide {
+    width: auto;
+    flex-shrink: 0;
+}
+
+.listed-control-area {
+    margin: 0px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #454563;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100px;
+    height: 30px;
+    /* background: #3b3b50; */
+}
+
+.tabs button {
+    width: 55px;
+    height: 30px;
+    border: none;
+    background: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(14px, 0.5vw, 100px);
+    font-weight: bold;
+    color: #dfdede;
+}
+
+.tabs button:hover {
+    border-bottom: 2px solid #04ec65;
+}
+
+/* .tabs #active {
+    border-bottom: 2px solid #04ec65;
+} */
+
+.tabs button:active {
+    border-bottom: 2px solid #0166ff;
+}
+
+.listed-area {
+    font-size: clamp(14px, 0.5vw, 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    /* min-width: 145px; */
+    /* max-width: 500px; */
+    /* height: 55px; */
+    /* background: #b8b8b8; */
+    background: #68688b;
+    /* border-radius: 5px; */
+    margin: 0px;
+    padding: 10px 10px;
+}
+
+.listed-card {
+    font-size: clamp(14px, 0.5vw, 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+    /* max-width: 500px; */
+    height: 60px;
+    /* background: #b8b8b8; */
+    background: #454563;
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.coin-and-ticker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(16px, 0.5vw, 100px);
+    font-weight: bold;
+    color: #e2e2e2;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6236e7;
+    padding: 20px 15px;
+    border-top: 4px solid#0166ff;
+    /* width: 100%; */
+}
 
 
 /* MEDIA QUERY STARTA HERE: 👇 */
@@ -300,7 +474,7 @@ body {
         justify-content: center;
         align-items: center;
         font-size: clamp(16px, 0.5vw, 100px);
-        padding: 6px 45px;
+        padding: 10px 45px;
         background: #0166ff;
         border: none;
         border-radius: 10px;
@@ -313,10 +487,10 @@ body {
         justify-content: center;
         align-items: center;
         font-size: clamp(16px, 0.5vw, 100px);
-        padding: 6px 40px;
+        padding: 10px 40px;
         background: #0166ff;
         border: none;
-        border-radius: 10px;
+        /* border-radius: 5px; */
         min-width: 25vw;
         max-width: 20vw;
     }
