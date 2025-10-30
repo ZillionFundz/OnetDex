@@ -276,9 +276,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 160px;
+    min-width: 165px;
     /* max-width: 500px; */
-    height: 60px;
+    height: 62px;
     /* background: #d34c4c; */
     /* background: #68688b; */
     background: #302e2e;
@@ -454,12 +454,12 @@ body {
     margin: 0px;
     padding: 5px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+    color: #10df66;
 }
 
 .more-listed button:hover {
-    display: block;
-    border-radius: 4px;
+    border: 1px solid #000;
 }
 
 .footer {
