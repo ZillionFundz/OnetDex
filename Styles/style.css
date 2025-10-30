@@ -262,7 +262,7 @@ body {
 .trend-area {
     width: 100vw;
     padding: 5px 0px 5px 10px;
-    background: #68688b;
+    background: #454563;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -276,11 +276,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 150px;
+    min-width: 160px;
     /* max-width: 500px; */
-    height: 55px;
-    background: #454563;
+    height: 60px;
     /* background: #d34c4c; */
+    /* background: #68688b; */
+    background: #575785;
     border-radius: 10px;
     margin: 0px;
     padding: 0px 10px;
@@ -364,7 +365,7 @@ body {
     justify-content: space-between;
     align-items: center;
     /* background: #454563; */
-    background: #68688b;
+    background: #454563;
 }
 
 .tabs {
@@ -411,7 +412,7 @@ body {
     /* max-width: 500px; */
     /* height: 55px; */
     /* background: #b8b8b8; */
-    background: #68688b;
+    background: #454563;
     /* border-radius: 5px; */
     margin: 0px;
     padding: 10px 10px;
@@ -426,7 +427,8 @@ body {
     /* max-width: 500px; */
     height: 60px;
     /* background: #b8b8b8; */
-    background: #454563;
+    /* background: #68688b; */
+    background: #575785;
     border-radius: 5px;
     margin: 0px;
     padding: 0px 10px;
@@ -451,6 +453,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background: #0166ff; */
     background: #0166ff;
     padding: 20px 15px;
     border-top: 4px solid#6236e7;
