@@ -51,9 +51,7 @@ const coinIdMap = {
     bitcoin: 'bitcoin',
     ethereum: 'ethereum',
     binancecoin: 'binancecoin',
-    // your UI uses "coredaoorg" -> map to CoinGecko 'coredao'
-    coredaoorg: 'coredao',
-    coredao: 'coredao',
+    coredao: 'coredaoorg',
     rockycat: 'rockycat',
     snowman: 'snowman',
     ice: 'ice'
