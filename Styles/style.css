@@ -23,6 +23,8 @@ html {
 body {
     line-height: 1.35;
     color: #111;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* explicit weights so you can notice changes */
@@ -39,28 +41,25 @@ body {
 
 
 
-body {
-    margin: 0px;
-    padding: 0px;
-}
 
 .container {
     margin: auto;
     /* max-width: 350px; */
-    min-width: 200px;
-    max-width: 55vw;
+    min-width: 250px;
+    max-width: 700px;
     min-height: 100vh;
     background: #dddfe2;
     overflow: hidden;
+    margin-bottom: 60px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0166ff;
+    /* background: #0166ff; */
     padding: 10px 15px;
-    border-bottom: 4px solid#5025d1;
+    /* border-bottom: 4px solid#5025d1; */
 }
 
 .controls {
@@ -71,7 +70,7 @@ body {
 }
 
 .header img {
-    width: 20px;
+    width: 25px;
     margin: 0px;
 }
 
@@ -79,27 +78,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px 5px;
+    padding: 5px 10px;
     background: #5025d1;
     border: 0.5px solid #000;
-    border-radius: 5px;
-    gap: 4px;
+    border-radius: 7px;
+    gap: 5px;
 }
 
 .wallet-box span {
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(10px, 0.5vw, 100px);
+    font-size: clamp(12px, 0.5vw, 100px);
 }
 
 .scanner {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px 5px;
+    padding: 5px 5px;
     background: #5025d1;
     border: 0.5px solid #000;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .controls-panel {
@@ -182,6 +181,7 @@ body {
     font-size: clamp(16px, 0.5vw, 100px);
     padding: 10px 45px;
     background: #0166ff;
+    color: #d3d2d2;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
@@ -196,7 +196,7 @@ body {
     margin: 5px 0px;
     padding: 5px 0px;
     background: #fff;
-    width: 100%;
+    min-width: 100%;
     gap: 2px;
     position: relative;
 }
@@ -211,20 +211,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.swap-box-a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px;
-    padding: 5px;
-    width: 50vw;
-    height: 100px;
-    gap: 10px;
-    background: #dadcdf;
-    border-radius: 0px 10px 10px 0px;
-}
-
+.swap-box-a,
 .swap-box-b {
     display: flex;
     justify-content: center;
@@ -232,11 +219,18 @@ body {
     flex-direction: column;
     margin: 0px;
     padding: 5px;
-    width: 50vw;
+    width: 50%;
     height: 100px;
     gap: 10px;
-    /* background: #dddfe2; */
     background: #dadcdf;
+
+}
+
+.swap-box-a {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.swap-box-b {
     border-radius: 10px 0px 0px 10px;
 }
 
@@ -269,6 +263,7 @@ body {
     font-size: clamp(16px, 0.5vw, 100px);
     padding: 10px 45px;
     background: #0166ff;
+    color: #d3d2d2;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
@@ -565,10 +560,47 @@ body {
     justify-content: space-between;
     align-items: center;
     /* background: #0166ff; */
+    background: #545474;
+    /* background-color: #5025D1; */
+    height: 65px;
+    color: #ffffff;
+    border-top: 4px solid #5025d1;
+    font-size: clamp(14px, 0.5vw, 100px);
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    margin: 0px;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    margin: 0px;
+    backdrop-filter: blur(45px);
+}
+
+.footer-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #0166ff;
     padding: 20px 15px;
     border-top: 4px solid#000;
-    /* width: 100%; */
+} */
+
+
+.footer img {
+    height: 25px;
+    margin: 0px 10px;
+
 }
 
 
@@ -578,11 +610,12 @@ body {
     .container {
         margin: auto;
         /* max-width: 350px; */
-        min-width: 200px;
-        max-width: 100vw;
+        min-width: 240px;
+        max-width: 100%;
         min-height: 100vh;
         background: #dddfe2;
         overflow: hidden;
+        margin-bottom: 60px;
     }
 
     .cta-buttons {
@@ -609,5 +642,27 @@ body {
         /* border-radius: 5px; */
         min-width: 25vw;
         max-width: 20vw;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background: #0166ff; */
+        background: #545474;
+        /* background-color: #5025D1; */
+        height: 65px;
+        color: #ffffff;
+        border-top: 4px solid #5025d1;
+        font-size: clamp(14px, 0.5vw, 100px);
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        margin: 0px;
+        padding: 20px;
+        bottom: 0;
+        right: 0;
+        margin: 0px;
+        backdrop-filter: blur(45px);
     }
 }
