@@ -355,6 +355,14 @@ body {
     background: #c9c4c4;
 }
 
+.ticker-and-trend-value {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+}
+
 .ticker-and-value {
     display: flex;
     justify-content: flex-start;
@@ -377,7 +385,7 @@ body {
     transition: color 0.5s ease;
 }
 
-/* THIS CODE IS FOR DIFERENCE IN PRICE CHANGES: 👇*/
+/* THIS CODE IS FOR DIFERENT COLOR IN PRICE CHANGES: 👇*/
 .coin-value.price-up {
     color: #36f89d !important;
     /* Green for price increase */
@@ -394,7 +402,7 @@ body {
     /* Black for errors */
 }
 
-.volume-and-price {
+.volume-and-amount {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
