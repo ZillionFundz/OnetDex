@@ -50,7 +50,7 @@ body {
     min-height: 100vh;
     background: #dddfe2;
     overflow: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 65px;
 }
 
 .header {
@@ -582,9 +582,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1px;
+    gap: 4px;
     margin: 0px;
     padding: 0px;
+    color: #1a1a1a;
+}
+
+.fa-solid {
+    color: #292929;
+    font-size: clamp(26px, 0.5vw, 100px);
 }
 
 /* .footer {
@@ -595,13 +601,6 @@ body {
     padding: 20px 15px;
     border-top: 4px solid#000;
 } */
-
-
-.footer img {
-    height: 25px;
-    margin: 0px 10px;
-
-}
 
 
 /* MEDIA QUERY STARTA HERE: 👇 */
@@ -615,7 +614,7 @@ body {
         min-height: 100vh;
         background: #dddfe2;
         overflow: hidden;
-        margin-bottom: 60px;
+        margin-bottom: 65px;
     }
 
     .cta-buttons {
