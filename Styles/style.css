@@ -372,7 +372,26 @@ body {
 .coin-value {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(12px, 0.5vw, 100px);
-    color: #a5a4a4;
+    /* color: #a5a4a4; */
+    color: #5a9bfd;
+    transition: color 0.5s ease;
+}
+
+/* THIS CODE IS FOR DIFERENCE IN PRICE CHANGES: 👇*/
+.coin-value.price-up {
+    color: #36f89d !important;
+    /* Green for price increase */
+}
+
+.coin-value.price-down {
+    color: #ff4646 !important;
+    /* Red for price decrease */
+}
+
+.coin-value.price-error {
+    /* color: #888 !important; */
+    color: #000 !important;
+    /* Black for errors */
 }
 
 .volume-and-price {
