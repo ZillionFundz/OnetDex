@@ -18,7 +18,7 @@
             <div class="controls">
                 <img src="Images/settings.png" alt="">
                 <div class="wallet-box">
-                    <img src="Images/wallet.png" alt="">
+                    <i class="fa-solid fa-wallet"></i>
                     <span>ONET-Wallet</span>
                 </div>
 
@@ -85,6 +85,7 @@
         </div>
         <h3 class="trending-title">Trending:</h3>
 
+        <!-- TRENDING COINS ARE DISPLAYED IN THESE CARDS BELOW:👇 -->
         <div class="trending-area">
             <div class="swiper trending-swiper">
                 <div class="swiper-wrapper">
@@ -150,12 +151,14 @@
                 <button id="active" class="">Crypto</button>
             </div>
             <div class="tabs">
-                <button>NFTs</button>
+                <button onclick="nftShow()">NFTs</button>
             </div>
             <div class="tabs">
                 <button>History</button>
             </div>
         </div>
+
+        <!-- COINS LISTED IN THIS EXCHANGE OFTEN APPER HERE:👇 -->
         <div class="listed-area">
             <div class="listed-card">
                 <div class="coin-and-ticker">
@@ -246,6 +249,11 @@
                     <div class="coin-volume">500</div>
                     <div class="coin-amount">$100.7500</div>
                 </div>
+            </div>
+
+
+            <div id="nft" class="nft-card">
+                <img src="Images/nft.png" alt="">
             </div>
             <div class="more-listed">
                 <button>View More</button>
