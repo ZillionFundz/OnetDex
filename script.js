@@ -147,10 +147,33 @@ async function updateCryptoPrices() {
 updateCryptoPrices();
 setInterval(updateCryptoPrices, POLL_INTERVAL_MS);
 
-// Keep your existing Swiper code below this line
+
+// ...existing code...
+
+// View More functionality
+document.getElementById('viewMoreBtn').addEventListener('click', function () {
+    const hiddenCoins = document.querySelectorAll('.hidden-coin');
+    const btn = this;
+
+    hiddenCoins.forEach(coin => {
+        if (coin.classList.contains('visible')) {
+            coin.classList.remove('visible');
+            btn.textContent = 'View More';
+        } else {
+            coin.classList.add('visible');
+            btn.textContent = 'View Less';
+        }
+    });
+
+    // Update prices for newly visible coins
+    updateCryptoPrices();
+});
+
 // ...existing code...
 
 
+// Keep your existing Swiper code below this line
+// ...existing code...
 
 // TRENDING SWIPER INIT
 // const swiper = new Swiper('.trending-swiper', {
