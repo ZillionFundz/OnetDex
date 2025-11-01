@@ -384,13 +384,15 @@ body {
 /* color states: match when class is on the element itself or on the .coin-value child */
 .price-up,
 .coin-value.price-up {
-    color: #0ea75f !important;
+    /* color: #0ea75f !important; */
+    color: #00A83E !important;
     /* green when up ≥ +1% */
 }
 
 .price-down,
 .coin-value.price-down {
-    color: #e03b3b !important;
+    /* color: #e03b3b !important; */
+    color: #FF3D46 !important;
     /* red when down ≤ -1% */
 }
 
