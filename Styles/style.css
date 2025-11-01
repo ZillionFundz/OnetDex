@@ -380,21 +380,26 @@ body {
 }
 
 /* THIS CODE IS FOR DIFERENT COLOR IN PRICE CHANGES: 👇*/
+
+/* color states: match when class is on the element itself or on the .coin-value child */
+.price-up,
 .coin-value.price-up {
-    color: #36f89d !important;
-    /* Green for price increase */
+    color: #0ea75f !important;
+    /* green when up ≥ +1% */
 }
 
+.price-down,
 .coin-value.price-down {
-    color: #ff4646 !important;
-    /* Red for price decrease */
+    color: #e03b3b !important;
+    /* red when down ≤ -1% */
 }
 
+.price-error,
 .coin-value.price-error {
-    /* color: #888 !important; */
-    color: #000 !important;
-    /* Black for errors */
+    color: #888888 !important;
+    /* neutral/error */
 }
+
 
 .volume-and-amount {
     display: flex;
@@ -455,6 +460,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     /* background: #454563; */
     /* background: #dadcdf; */
     background: #6c6583;
@@ -508,7 +514,7 @@ body {
     gap: 5px;
     background: #6c6583;
     margin: 0px;
-    padding: 10px 10px 70px;
+    padding: 10px 10px 80px;
 }
 
 .listed-card {
@@ -534,6 +540,10 @@ body {
     align-items: center;
     gap: 8px;
 
+}
+
+.nft-card {
+    display: none;
 }
 
 .more-listed button {
@@ -576,7 +586,7 @@ body {
     /* height: 65px; */
     position: fixed;
     margin: 0px;
-    padding: 10px 35px;
+    padding: 10px 65px;
     bottom: 0;
     /* right: 0; */
     left: 50%;
@@ -600,6 +610,13 @@ body {
 .fa-solid {
     color: #292929;
     font-size: clamp(26px, 0.5vw, 100px);
+    padding: 4px 0px;
+}
+
+.fa-solid:hover {
+    color: #000;
+    font-size: clamp(26px, 0.5vw, 100px);
+    border-bottom: 2px solid #04ec65;
 }
 
 /* .footer {
@@ -653,24 +670,43 @@ body {
         max-width: 20vw;
     }
 
-    /* .footer {
+    .listed-control-area {
+        margin: 0px;
+        padding: 5px 20px;
+        padding-top: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #0166ff;
+        gap: 5px;
+        /* background: #454563; */
+        /* background: #dadcdf; */
+        background: #6c6583;
+        background: linear-gradient(360deg, #5025d1, #5025d1, #dadcdf);
+        border-bottom: 4px solid #424244;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
         background: #5025D1;
-        height: 65px;
         color: #ffffff;
-        border-top: 4px solid #545474;
-        font-size: clamp(14px, 0.5vw, 100px);
+        /* border-top: 4px solid #545474; */
+        border-top: 4px solid #424244;
+        font-size: clamp(12px, 0.5vw, 100px);
         text-align: center;
         width: 100%;
+        /* height: 65px; */
         position: fixed;
         margin: 0px;
-        padding: 20px;
+        padding: 10px 25px;
         bottom: 0;
-        right: 0;
-        margin: 0px;
+        /* right: 0; */
+        left: 50%;
+        max-width: 704px;
+        border-radius: 8px 8px 0 0;
         backdrop-filter: blur(45px);
-    } */
+        transform: translateX(-50%);
+    }
 }
