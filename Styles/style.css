@@ -50,7 +50,7 @@ body {
     min-height: 100vh;
     background: #dddfe2;
     overflow: hidden;
-    margin-bottom: 65px;
+    /* margin-bottom: 65px; */
 }
 
 .header {
@@ -506,14 +506,9 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 5px;
-    /* min-width: 145px; */
-    /* max-width: 500px; */
-    /* height: 55px; */
-    /* background: #b8b8b8; */
     background: #6c6583;
-    /* border-radius: 5px; */
     margin: 0px;
-    padding: 10px 10px;
+    padding: 10px 10px 70px;
 }
 
 .listed-card {
@@ -522,13 +517,8 @@ body {
     justify-content: space-between;
     align-items: center;
     min-width: 100%;
-    /* max-width: 500px; */
     height: 62px;
     background: #545474;
-    /* background: #68688b; */
-    /* background: #545474; */
-    /* background: #3f3f52; */
-    /* background: #3f3f52; */
     border-radius: 5px;
     margin: 0px;
     padding: 0px 10px;
@@ -549,7 +539,7 @@ body {
 .more-listed button {
     background: none;
     margin: 4px;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     border-radius: 10px;
     color: #68ffb8;
@@ -557,8 +547,19 @@ body {
 }
 
 .more-listed button:hover {
-    border: 1px solid #000;
+    border: none;
     color: #ffffff;
+
+    border-bottom: 2px solid #04ec65;
+    background: #5025D1;
+    color: #d3d2d2;
+}
+
+.more-listed button:active {
+    border: 1px solid #000;
+    border-bottom: 2px solid #0166ff;
+    background: #4f2cb8;
+    color: #d3d2d2;
 }
 
 .footer {
@@ -576,11 +577,14 @@ body {
     width: 100%;
     position: fixed;
     margin: 0px;
-    padding: 20px;
+    padding: 20px 55px;
     bottom: 0;
-    right: 0;
-    margin: 0px;
+    /* right: 0; */
+    left: 50%;
+    max-width: 704px;
+    border-radius: 8px 8px 0 0;
     backdrop-filter: blur(45px);
+    transform: translateX(-50%);
 }
 
 .footer-icon {
@@ -620,7 +624,8 @@ body {
         min-height: 100vh;
         background: #dddfe2;
         overflow: hidden;
-        margin-bottom: 65px;
+        /* margin-bottom: 65px; */
+        /* padding-bottom: 130px; */
     }
 
     .cta-buttons {
