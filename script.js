@@ -54,55 +54,6 @@ function applyColorClass(el, changePercent) {
 // ...existing code...
 
 
-
-// ...existing code...
-// THIS IS SECOND OPTION. USES SMALL THREASHOLD (OF 0.01%) AND REQUIRES 2 CONSECUTIVE POLLS (SMOOTHING).
-// const THRESHOLD_PERCENT = 0.01; // 0.01% sensitivity
-// const REQUIRED_CONSECUTIVE_POLLS = 2;
-// const changeStreak = {}; // tracks { dir, count } per apiId
-
-// function applyColorClass(el, changePercent) {
-//     // clear previous transient state (final class applied only after streak)
-//     el.classList.remove('price-up', 'price-down', 'price-error', 'price-loading');
-
-//     const change = Number(changePercent);
-//     if (!isFinite(change)) {
-//         dlog('   ⚠️ Invalid changePercent', changePercent);
-//         el.classList.add('price-error');
-//         return;
-//     }
-
-//     // direction: 1 = up, -1 = down, 0 = neutral
-//     let dir = 0;
-//     if (change >= THRESHOLD_PERCENT) dir = 1;
-//     else if (change <= -THRESHOLD_PERCENT) dir = -1;
-
-//     // derive apiId key from data-coin if present
-//     const apiId = (el.dataset && el.dataset.coin) ? el.dataset.coin.trim() : (el.getAttribute('data-coin') || '').trim() || 'unknown';
-//     changeStreak[apiId] = changeStreak[apiId] || { dir: 0, count: 0 };
-
-//     if (dir !== 0 && dir === changeStreak[apiId].dir) {
-//         changeStreak[apiId].count++;
-//     } else if (dir !== 0) {
-//         changeStreak[apiId].dir = dir;
-//         changeStreak[apiId].count = 1;
-//     } else {
-//         // neutral — reset streak
-//         changeStreak[apiId].dir = 0;
-//         changeStreak[apiId].count = 0;
-//     }
-
-//     dlog(`   💹 ${apiId} ${change.toFixed(6)}% dir=${dir} streak=${changeStreak[apiId].count}/${REQUIRED_CONSECUTIVE_POLLS}`);
-
-//     if (changeStreak[apiId].count >= REQUIRED_CONSECUTIVE_POLLS) {
-//         if (dir === 1) el.classList.add('price-up');
-//         else if (dir === -1) el.classList.add('price-down');
-//     }
-// }
-// ...existing code...
-
-
-
 // Track previous prices for change calculation
 const previousPrices = {};
 
