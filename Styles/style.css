@@ -573,6 +573,32 @@ body {
     color: #d3d2d2;
 }
 
+/* ...HIDEN COINS HERE, TO REVEAL WHEN BUTTON IS CLICKED...👇 */
+
+.hidden-coin {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.hidden-coin.visible {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ...existing code... */
+
+
 .footer {
     display: flex;
     justify-content: space-between;
