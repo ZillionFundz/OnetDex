@@ -473,7 +473,7 @@ body {
 }
 
 .tabs button {
-    width: 55px;
+    width: 60px;
     height: 25px;
     border: none;
     background: none;
@@ -481,10 +481,14 @@ body {
     font-size: clamp(14px, 0.5vw, 100px);
     font-weight: bold;
     color: #292929;
+    border: 0.5px solid #424244;
+    border-radius: 10px;
 }
 
 .tabs button:hover {
     border-bottom: 2px solid #04ec65;
+    background: #4f2cb8;
+    color: #d3d2d2;
 }
 
 /* .tabs #active {
@@ -544,15 +548,17 @@ body {
 
 .more-listed button {
     background: none;
-    margin: 0px;
+    margin: 4px;
     padding: 5px;
     border: none;
     border-radius: 10px;
-    color: #36f89d;
+    color: #68ffb8;
+    border: 1px solid #424244;
 }
 
 .more-listed button:hover {
     border: 1px solid #000;
+    color: #ffffff;
 }
 
 .footer {
