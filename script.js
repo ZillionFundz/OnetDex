@@ -1,10 +1,204 @@
-// Minimal, robust script.js: Swiper init + CoinGecko live prices + ±5% color logic + debug logs
+// Minimal, robust script.js: CoinGecko live prices + ±1% color logic + debug logs
 
 // ------- CONFIG -------
 const DEBUG = true;            // set false to silence debug logs
 const POLL_INTERVAL_MS = 30000; // price update interval
 
-function dlog(...args) { if (DEBUG) console.log('[PRICE]', ...args); }
+// Debug log helper
+function dlog(...args) { if (DEBUG) console.log(...args); }
+
+// ------- COIN ID MAPPING (UI data-coin -> CoinGecko id) -------
+const coinIdMap = {
+    pi: 'pi-network',
+    bitcoin: 'bitcoin',
+    ethereum: 'ethereum',
+    binancecoin: 'binancecoin',
+    coredao: 'coredaoorg',
+    rockycat: 'rockycat',
+    snowman: 'snowman',
+    ice: 'ice',
+    one: 'harmony' // added mapping for $ONE
+};
+
+// Price formatting with adaptive decimals
+function formatPrice(value) {
+    if (typeof value !== 'number' || !isFinite(value)) return '--';
+    const abs = Math.abs(value);
+    const decimals = abs < 1 ? 6 : (abs < 10 ? 4 : 2);
+    return `$${value.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`;
+}
+
+// Apply color classes based on price change
+// THIS IS FIRST OPTION. USES SMALL THREASHOLD (OF 0.01%). ADJUST AS NEEDED.
+function applyColorClass(el, changePercent) {
+    const THRESHOLD = 0.01; // 0.01% sensitivity
+
+    // clear previous state classes
+    el.classList.remove('price-up', 'price-down', 'price-error', 'price-loading');
+
+    const change = Number(changePercent);
+    if (!isFinite(change)) {
+        dlog('   ⚠️ Invalid changePercent', changePercent);
+        el.classList.add('price-error');
+        return;
+    }
+
+    dlog(`   💹 changePercent: ${change.toFixed(6)}% (threshold ${THRESHOLD}%)`);
+
+    if (change >= THRESHOLD) {
+        el.classList.add('price-up');
+    } else if (change <= -THRESHOLD) {
+        el.classList.add('price-down');
+    }
+}
+// ...existing code...
+
+
+
+// ...existing code...
+// THIS IS SECOND OPTION. USES SMALL THREASHOLD (OF 0.01%) AND REQUIRES 2 CONSECUTIVE POLLS (SMOOTHING).
+// const THRESHOLD_PERCENT = 0.01; // 0.01% sensitivity
+// const REQUIRED_CONSECUTIVE_POLLS = 2;
+// const changeStreak = {}; // tracks { dir, count } per apiId
+
+// function applyColorClass(el, changePercent) {
+//     // clear previous transient state (final class applied only after streak)
+//     el.classList.remove('price-up', 'price-down', 'price-error', 'price-loading');
+
+//     const change = Number(changePercent);
+//     if (!isFinite(change)) {
+//         dlog('   ⚠️ Invalid changePercent', changePercent);
+//         el.classList.add('price-error');
+//         return;
+//     }
+
+//     // direction: 1 = up, -1 = down, 0 = neutral
+//     let dir = 0;
+//     if (change >= THRESHOLD_PERCENT) dir = 1;
+//     else if (change <= -THRESHOLD_PERCENT) dir = -1;
+
+//     // derive apiId key from data-coin if present
+//     const apiId = (el.dataset && el.dataset.coin) ? el.dataset.coin.trim() : (el.getAttribute('data-coin') || '').trim() || 'unknown';
+//     changeStreak[apiId] = changeStreak[apiId] || { dir: 0, count: 0 };
+
+//     if (dir !== 0 && dir === changeStreak[apiId].dir) {
+//         changeStreak[apiId].count++;
+//     } else if (dir !== 0) {
+//         changeStreak[apiId].dir = dir;
+//         changeStreak[apiId].count = 1;
+//     } else {
+//         // neutral — reset streak
+//         changeStreak[apiId].dir = 0;
+//         changeStreak[apiId].count = 0;
+//     }
+
+//     dlog(`   💹 ${apiId} ${change.toFixed(6)}% dir=${dir} streak=${changeStreak[apiId].count}/${REQUIRED_CONSECUTIVE_POLLS}`);
+
+//     if (changeStreak[apiId].count >= REQUIRED_CONSECUTIVE_POLLS) {
+//         if (dir === 1) el.classList.add('price-up');
+//         else if (dir === -1) el.classList.add('price-down');
+//     }
+// }
+// ...existing code...
+
+
+
+// Track previous prices for change calculation
+const previousPrices = {};
+
+// Main price update function
+async function updateCryptoPrices() {
+    try {
+        const elems = Array.from(document.querySelectorAll('[data-coin]'));
+        dlog('-------- Price Update Start --------');
+        dlog(`Found ${elems.length} price elements`);
+
+        // Build list of API ids to request
+        const ids = elems
+            .map(el => (coinIdMap[el.dataset.coin] || el.dataset.coin || '').trim())
+            .filter(Boolean);
+
+        const uniqueIds = [...new Set(ids)];
+        if (!uniqueIds.length) {
+            dlog('No valid coin ids to request');
+            return;
+        }
+
+        const url = `https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(uniqueIds.join(','))}&vs_currencies=usd&include_24h_change=true`;
+        dlog('Fetching', url);
+
+        const res = await fetch(url);
+        dlog('Fetch status', res.status);
+        if (!res.ok) throw new Error(`CoinGecko fetch failed: ${res.status}`);
+
+        const data = await res.json();
+        dlog('API response keys:', Object.keys(data));
+
+        // Now process elements with the fetched data
+        elems.forEach(el => {
+            const uiKey = (el.dataset.coin || '').trim();
+            const apiId = coinIdMap[uiKey] || uiKey;
+            const entry = data[apiId];
+            const target = el.querySelector('.coin-value') || el;
+
+            // ensure previous state removed
+            target.classList.remove('price-up', 'price-down', 'price-error', 'price-loading');
+
+            if (!entry || typeof entry.usd === 'undefined') {
+                dlog(`❌ No data for ${apiId}`);
+                target.textContent = '--';
+                target.classList.add('price-error');
+                return;
+            }
+
+            const current = Number(entry.usd);
+            const apiChange24 = (typeof entry.usd_24h_change === 'number' && isFinite(entry.usd_24h_change))
+                ? Number(entry.usd_24h_change)
+                : null;
+
+            dlog(`💱 ${apiId}`, { price: current, change24h: apiChange24 });
+
+            target.textContent = formatPrice(current);
+
+            if (apiChange24 !== null) {
+                // use API 24h change when available
+                applyColorClass(target, apiChange24);
+            } else if (previousPrices[apiId]) {
+                // fallback: compute percent change vs previous price
+                const prev = Number(previousPrices[apiId]);
+                if (prev && isFinite(prev)) {
+                    const pct = ((current - prev) / prev) * 100;
+                    dlog(`   fallback pct vs previous: ${pct.toFixed(2)}%`);
+                    applyColorClass(target, pct);
+                } else {
+                    target.classList.add('price-error');
+                }
+            } else {
+                // first fetch and no change data — show neutral/error
+                target.classList.add('price-error');
+            }
+
+            previousPrices[apiId] = current;
+        });
+
+        dlog('-------- Price Update Complete --------\n');
+
+    } catch (err) {
+        console.error('❌ Price update error:', err);
+        document.querySelectorAll('[data-coin]').forEach(el => {
+            el.textContent = '--';
+            el.classList.add('price-error');
+        });
+    }
+}
+
+// Start price updates
+updateCryptoPrices();
+setInterval(updateCryptoPrices, POLL_INTERVAL_MS);
+
+// Keep your existing Swiper code below this line
+// ...existing code...
+
 
 
 // TRENDING SWIPER INIT
@@ -43,134 +237,13 @@ const swiper = new Swiper('.trending-swiper', {
     speed: 4000
 });
 
-// ------- COIN ID MAPPING (UI data-coin -> CoinGecko id) -------
-// Add/update mappings here for any UI keys that differ from CoinGecko ids.
-const coinIdMap = {
-    // examples from your HTML
-    pi: 'pi-network',
-    bitcoin: 'bitcoin',
-    ethereum: 'ethereum',
-    binancecoin: 'binancecoin',
-    coredao: 'coredaoorg',
-    rockycat: 'rockycat',
-    snowman: 'snowman',
-    ice: 'ice'
-};
 
-// ------- STATE -------
-let previousPrices = {}; // stores last fetched price per API id
-
-// ------- HELPERS -------
-function formatPrice(value) {
-    if (typeof value !== 'number' || !isFinite(value)) return '--';
-    const abs = Math.abs(value);
-    const decimals = abs < 1 ? 6 : (abs < 10 ? 4 : 2);
-    return `$${value.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`;
+// ------- NFT SHOW FUNCTION -------
+function nftShow() {
+    const listed = document.getElementsByClassName("listed-card")[0];
+    listed.style.display = "none";
+    const nft = document.getElementById("nft");
+    nft.style.display = "block";
 }
 
-// ...existing code...
 
-function applyColorClass(el, changePercent) {
-    // Remove existing state classes
-    el.classList.remove('price-up', 'price-down', 'price-error', 'price-loading');
-
-    // Ensure changePercent is a valid number
-    const change = Number(changePercent);
-    if (isNaN(change)) {
-        dlog(`   ⚠️ Invalid change percentage: ${changePercent}`);
-        el.classList.add('price-error');
-        return;
-    }
-
-    dlog(`   💹 Price Change Analysis:`);
-    dlog(`   - Raw change: ${change}`);
-    dlog(`   - Formatted: ${change.toFixed(2)}%`);
-
-    // Apply color classes based on ±1% thresholds
-    if (change >= 1) {
-        el.classList.add('price-up');
-        dlog(`   🟢 Added class: price-up (≥ +1%)`);
-    } else if (change <= -1) {  // Changed from -5% to -1%
-        el.classList.add('price-down');
-        dlog(`   🔴 Added class: price-down (≤ -1%)`);
-    } else {
-        dlog(`   ⚪ No color change (between -1% and +1%)`);
-    }
-
-    // Log final state
-    const finalClasses = Array.from(el.classList).join(' ');
-    dlog(`   📊 Final classes: ${finalClasses || 'none'}`);
-}
-
-// ...existing code...
-
-// ------- MAIN UPDATE FUNCTION -------
-async function updateCryptoPrices() {
-    try {
-        const elems = Array.from(document.querySelectorAll('[data-coin]'));
-        dlog('-------- Price Update Start --------');
-        dlog(`Found ${elems.length} price elements`);
-
-        // Build list of API ids to request
-        const ids = elems
-            .map(el => (coinIdMap[el.dataset.coin] || el.dataset.coin || '').trim())
-            .filter(Boolean);
-
-        const uniqueIds = [...new Set(ids)];
-        if (!uniqueIds.length) {
-            dlog('No valid coin ids to request');
-            return;
-        }
-
-        // Fetch price data from CoinGecko
-        const url = `https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(uniqueIds.join(','))}&vs_currencies=usd&include_24h_change=true`;
-        dlog('Fetching', url);
-
-        const res = await fetch(url);
-        dlog('Fetch status', res.status);
-        if (!res.ok) throw new Error(`CoinGecko fetch failed: ${res.status}`);
-
-        const data = await res.json();
-        dlog('API response keys:', Object.keys(data));
-
-        // Now process elements with the fetched data
-        elems.forEach(el => {
-            const uiKey = el.dataset.coin;
-            const apiId = coinIdMap[uiKey] || uiKey;
-            const entry = data[apiId];
-
-            if (!entry || typeof entry.usd === 'undefined') {
-                dlog(`❌ No data for ${apiId}`);
-                el.textContent = '--';
-                el.classList.add('price-error');
-                return;
-            }
-
-            const current = Number(entry.usd);
-            const apiChange24 = (typeof entry.usd_24h_change === 'number') ? Number(entry.usd_24h_change) : null;
-
-            dlog(`💱 ${apiId.toUpperCase()}`);
-            dlog(`   Price: $${current}`);
-            dlog(`   24h Change: ${apiChange24 !== null ? apiChange24.toFixed(2) + '%' : 'not available'}`);
-            dlog(`   Previous Price: ${previousPrices[apiId] || 'none'}`);
-
-            // Update element with price and color
-            el.textContent = formatPrice(current);
-            applyColorClass(el, apiChange24 || 0);
-            previousPrices[apiId] = current;
-        });
-
-        dlog('-------- Price Update Complete --------\n');
-
-    } catch (err) {
-        console.error('❌ Price update error:', err);
-        document.querySelectorAll('[data-coin]').forEach(el => {
-            el.textContent = '--';
-            el.classList.add('price-error');
-        });
-    }
-}
-
-// ------- START UP -------
-updateCryptoPrices();
-setInterval(updateCryptoPrices, POLL_INTERVAL_MS);
