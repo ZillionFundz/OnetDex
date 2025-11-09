@@ -543,13 +543,13 @@ body {
     font-weight: bold;
     /* color: #292929; */
     color: #d3d2d2;
-    border: 0.5px solid #2a2aa0;
+    border: 0.5px solid #1e1e85;
     border-radius: 10px;
 }
 
 .tabs button:hover {
     border-bottom: 2px solid #04ec65;
-    background: #4f2cb8;
+    background: rgb(86, 48, 202);
     /* color: #d3d2d2; */
     color: #292929;
 }
