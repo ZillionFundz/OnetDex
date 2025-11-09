@@ -541,15 +541,17 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(14px, 0.5vw, 100px);
     font-weight: bold;
-    color: #292929;
-    border: 0.5px solid #424244;
+    /* color: #292929; */
+    color: #d3d2d2;
+    border: 0.5px solid #2a2aa0;
     border-radius: 10px;
 }
 
 .tabs button:hover {
     border-bottom: 2px solid #04ec65;
     background: #4f2cb8;
-    color: #d3d2d2;
+    /* color: #d3d2d2; */
+    color: #292929;
 }
 
 /* .tabs #active {
