@@ -78,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px 10px;
+    padding: 4px 10px;
     background: #5025d1;
     /* border: 0.5px solid #000; */
     border-radius: 7px;
@@ -95,7 +95,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 5px;
+    padding: 4px;
     background: #5025d1;
     /* border: 0.5px solid #000; */
     border-radius: 7px;
@@ -174,19 +174,56 @@ body {
     margin: 5px 0px 5px;
 }
 
+.fa-solid,
+.fa-solid-footer {
+    color: #d3d2d2;
+    font-size: clamp(25px, 0.5vw, 100px);
+    padding: 4px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fa-solid:hover {
+    color: #000;
+}
+
+.fa-head {
+    color: #292929;
+    /* font-size: clamp(26px, 0.5vw, 100px); */
+    padding: 4px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fa-footer {
+    color: #292929;
+    /* font-size: clamp(26px, 0.5vw, 100px); */
+    padding: 4px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fa-footer:hover {
+    color: #000;
+    font-size: clamp(26px, 0.5vw, 100px);
+    border-bottom: 2px solid #04ec65;
+}
+
 .cta-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(16px, 0.5vw, 100px);
+    font-size: clamp(14px, 0.5vw, 100px);
     padding: 10px 45px;
     background: #0166ff;
     color: #d3d2d2;
     border: none;
+    gap: 5px;
     border-radius: 10px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
     min-width: 23vw;
     max-width: 20vw;
+    cursor: pointer;
 }
 
 .swap-area {
@@ -260,15 +297,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(16px, 0.5vw, 100px);
+    font-size: clamp(14px, 0.5vw, 100px);
     padding: 10px 45px;
     background: #0166ff;
     color: #d3d2d2;
     border: none;
+    gap: 5px;
     border-radius: 10px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
     min-width: 15vw;
     max-width: 15vw;
+    cursor: pointer;
 }
 
 #buy {
@@ -546,7 +585,43 @@ body {
 
 .nft-card {
     display: none;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px;
 }
+
+.nft-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #fff;
+}
+
+.nft-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nft-controls button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nft-controls .nft-counter {
+    font-size: 0.9rem;
+    color: #444;
+    min-width: 48px;
+    text-align: center;
+}
+
 
 .more-listed button {
     background: none;
@@ -573,7 +648,7 @@ body {
     color: #d3d2d2;
 }
 
-/* ...HIDEN COINS HERE, TO REVEAL WHEN BUTTON IS CLICKED...👇 */
+/* ...HIDEN AND REVEAL LISTED COINS HERE, TO REVEAL WHEN BUTTON IS CLICKED...👇 */
 
 .hidden-coin {
     display: none;
@@ -635,26 +710,20 @@ body {
     color: #d3d2d2;
 }
 
-.fa-solid {
-    color: #292929;
-    font-size: clamp(26px, 0.5vw, 100px);
-    padding: 4px 0px;
+/* RULES FOR MASKING AMOUNTS HERE:👇 */
+.masked-amount {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
 }
 
-.fa-solid:hover {
-    color: #000;
-    font-size: clamp(26px, 0.5vw, 100px);
-    border-bottom: 2px solid #04ec65;
+.eye-toggle {
+    cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-/* .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0166ff;
-    padding: 20px 15px;
-    border-top: 4px solid#000;
-} */
+.eye-toggle.active {
+    opacity: 0.5;
+}
 
 
 /* MEDIA QUERY STARTA HERE: 👇 */
