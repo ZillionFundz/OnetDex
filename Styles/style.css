@@ -423,16 +423,15 @@ body {
 /* color states: match when class is on the element itself or on the .coin-value child */
 .price-up,
 .coin-value.price-up {
-    /* color: #0ea75f !important; */
     color: #04ec65 !important;
-    /* green when up ≥ +1% */
+    /* green when up ≥ +0.01% */
 }
 
 .price-down,
 .coin-value.price-down {
     /* color: #e03b3b !important; */
     color: #ff5e66 !important;
-    /* red when down ≤ -1% */
+    /* red when down ≤ -0.01% */
 }
 
 .price-error,
@@ -441,12 +440,18 @@ body {
     /* neutral/error */
 }
 
+.percentage-change-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
 .volume-and-amount {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
     text-align: right;
 }
 
@@ -459,9 +464,18 @@ body {
 
 .coin-amount {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(12px, 0.5vw, 100px);
     color: #b8b8b8;
 }
 
+.percentage-change {
+    margin: 0px;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background: #6e668a;
+    color: gold;
+    max-width: 70px;
+}
 
 /* SWIPER STYLING HERE:👇 */
 .trending-swiper {
@@ -686,7 +700,7 @@ body {
     font-size: clamp(12px, 0.5vw, 100px);
     text-align: center;
     width: 100%;
-    /* height: 65px; */
+    min-height: 70px;
     position: fixed;
     margin: 0px;
     padding: 10px 65px;
