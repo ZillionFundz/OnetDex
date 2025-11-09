@@ -16,7 +16,7 @@
     <div class="container">
         <div class="header">
             <div class="controls">
-                <img src="Images/settings.png" alt="">
+                <i class="fa-head fa-solid fa-gear"></i>
                 <div class="wallet-box">
                     <i class="fa-solid fa-wallet"></i>
                     <span>ONET-Wallet</span>
@@ -24,7 +24,7 @@
 
             </div>
             <div class="scanner">
-                <img src="Images/scan.png" alt="">
+                <i class="fa-solid fa-qrcode"></i>
             </div>
         </div>
         <div class="controls-panel">
@@ -37,17 +37,17 @@
                     <!-- <div class="amount">$</div> -->
                     <div class="amount">0.00</div>
                 </div>
-                <label for="amount-details" id="pnl">+$243 (485% PNL)</label>
+                <label for="amount-details" id="pnl">+$25 (125% PNL)</label>
             </div>
             <div class="exchange">
-                <div class="send cta-buttons">
-                    <img src="view-icon.png" alt="">
+                <button id="send-btn" class="cta-buttons">
+                    <i class="fa-solid fa-square-arrow-up-right"></i>
                     Send
-                </div>
-                <div class="receive cta-buttons">
-                    <img src="view-icon.png" alt="">
+                </button>
+                <button id="receive-btn" class="cta-buttons">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
                     Receive
-                </div>
+                </button>
             </div>
             <div class="swap-area">
                 <div class="swap-box-a">
@@ -69,23 +69,26 @@
                 </div>
             </div>
             <div class="transaction">
-                <div id="buy" class="trx-buttons">
-                    <img src="view-icon.png" alt="">
+                <button id="buy" class="trx-buttons">
+                    <i class="fa-solid fa-money-check-dollar"></i>
                     Buy
-                </div>
-                <div id="swap" class="trx-buttons">
-                    <img src="view-icon.png" alt="">
+                </button>
+                <button id="swap" class="trx-buttons">
+                    <i class="fa-solid fa-right-left"></i>
                     Swap
-                </div>
-                <div id="sell" class="trx-buttons">
-                    <img src="view-icon.png" alt="">
+                </button>
+                <button id="sell" class="trx-buttons">
+                    <i class="fa-solid fa-circle-check"></i>
                     Sell
-                </div>
+                </button>
             </div>
         </div>
-        <h3 class="trending-title">Trending:</h3>
+
+
 
         <!-- TRENDING COINS ARE DISPLAYED IN THESE CARDS BELOW:👇 -->
+        <h3 class="trending-title">Trending:</h3>
+
         <div class="trending-area">
             <div class="swiper trending-swiper">
                 <div class="swiper-wrapper">
@@ -151,7 +154,7 @@
                 <button id="active" class="">Crypto</button>
             </div>
             <div class="tabs">
-                <button onclick="nftShow()">NFTs</button>
+                <button id="cft" class="" onclick="nftShow()">NFTs</button>
             </div>
             <div class="tabs">
                 <button>History</button>
@@ -167,12 +170,12 @@
                     </div>
                     <div class="ticker-and-value">
                         <div class="coin-ticker">$ONE</div>
-                        <div class="coin-value" data-coin="one">$2M.00</div>
+                        <div class="coin-value" data-coin="one">$0.00</div>
                     </div>
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-ticker">1000</div>
-                    <div class="coin-amount">$2B</div>
+                    <div class="coin-amount">0.00</div>
                 </div>
             </div>
             <div class="listed-card">
@@ -187,7 +190,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">0.001</div>
-                    <div class="coin-amount">$108.0941</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card">
@@ -202,7 +205,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">0.012</div>
-                    <div class="coin-amount">$47.8812</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card">
@@ -217,7 +220,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">5M</div>
-                    <div class="coin-amount">$586.0000</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card">
@@ -232,7 +235,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">4743</div>
-                    <div class="coin-amount">$1,134.99999</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
 
@@ -249,7 +252,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">500</div>
-                    <div class="coin-amount">$100.7500</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card hidden-coin">
@@ -264,7 +267,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">0.025</div>
-                    <div class="coin-amount">$75.8250</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card hidden-coin">
@@ -279,7 +282,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">10M</div>
-                    <div class="coin-amount">$350.0000</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
             <div class="listed-card hidden-coin">
@@ -294,7 +297,7 @@
                 </div>
                 <div class="volume-and-amount">
                     <div class="coin-volume">5</div>
-                    <div class="coin-amount">$928.7514</div>
+                    <div class="coin-amount">$0.00</div>
                 </div>
             </div>
 
@@ -308,26 +311,26 @@
         </div>
         <footer class="footer">
             <div class="footer-icon active">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-footer fa-solid fa-house"></i>
                 <span>Home</span>
             </div>
             <div class="footer-icon">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+                <i class="fa-footer fa-solid fa-money-bill-trend-up"></i>
                 <span>Market</span>
             </div>
             <div class="footer-icon">
-                <i class="fa-solid fa-business-time"></i>
+                <i class="fa-footer fa-solid fa-business-time"></i>
                 <span>Portfolio</span>
             </div>
             <div class="footer-icon">
-                <i class="fa-solid fa-mask-face"></i>
+                <i class="fa-footer fa-solid fa-mask-face"></i>
                 <span>Discover</span>
             </div>
         </footer>
     </div>
     <!-- SWIPER JS BELOW -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="Scripts/script.js" defer></script>
 </body>
 
 </html>
