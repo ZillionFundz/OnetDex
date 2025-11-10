@@ -469,12 +469,62 @@ body {
 }
 
 .percentage-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0px;
-    padding: 5px 25px;
+    padding: 10px 10px;
     border-radius: 5px;
     background: #6e668a;
-    color: gold;
-    max-width: 70px;
+    border: none;
+    /* color: gold; */
+    min-width: 80px;
+}
+
+/* Last-column percentage change styles */
+.percentage-change {
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 150ms ease;
+    white-space: nowrap;
+}
+
+/* Up / down indicator before the value */
+.percentage-change.positive::before {
+    content: '▲ ';
+}
+
+.percentage-change.negative::before {
+    content: '▼ ';
+}
+
+/* Colors (adjust to match your theme) */
+.percentage-change.positive {
+    color: #04ec65;
+}
+
+/* green */
+.percentage-change.negative {
+    color: #ff5e66;
+}
+
+/* red */
+
+/* Small styling for trend-change when appended elsewhere */
+.trend-change {
+    font-weight: 600;
+    margin-left: 6px;
+    font-size: 0.85rem;
+}
+
+.trend-change.positive {
+    /* color: #16a34a; */
+    color: #04ec65;
+}
+
+.trend-change.negative {
+    /* color: #ef4444; */
+    color: #ff5e66;
 }
 
 /* SWIPER STYLING HERE:👇 */
