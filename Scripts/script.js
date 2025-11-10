@@ -49,7 +49,7 @@ const swiper = new Swiper('.trending-swiper', {
     const nextBtn = controls.querySelector('.nft-next');
     const counter = controls.querySelector('.nft-counter');
 
-    const nftImages = ['Images/nft.png', 'Images/core.jpg', 'Images/pi.jpg'];
+    const nftImages = ['Images/kitten.jpg', 'Images/cat.jpg', 'Images/cheetah.jpg', 'Images/panther.jpg', 'Images/lion.jpg'];
     let currentIndex = 0;
     function showNftAt(i) {
         if (!nftImages.length) return;
