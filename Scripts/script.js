@@ -89,7 +89,7 @@ const POLL_INTERVAL_MS = 30000;
 // Debug helper
 function dlog(...args) { if (DEBUG) console.log(...args); }
 
-// ------- COIN ID MAPPING -------
+// ------- COIN API-ID MAPPING -------
 window.coinIdMap = {
     pi: 'pi-network',
     bitcoin: 'bitcoin',
@@ -100,7 +100,8 @@ window.coinIdMap = {
     rockycat: 'rockycat',
     snowman: 'snowman',
     ice: 'ice',
-    one: 'harmony'
+    one: 'harmony',
+    dogs: 'dogs-2'
 };
 
 // Price formatting
@@ -384,3 +385,4 @@ if (viewMoreBtn) {
 }
 
 // End of script.js
+
