@@ -101,7 +101,8 @@ window.coinIdMap = {
     snowman: 'snowman',
     ice: 'ice',
     one: 'harmony',
-    dogs: 'dogs-2'
+    dogs: 'dogs-2',
+    dogecoin: 'dogecoin'
 };
 
 // Price formatting
